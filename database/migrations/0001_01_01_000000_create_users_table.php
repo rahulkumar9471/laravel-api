@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('mobile')->unique();
+            $table->enum('type', ['School', 'Pre-School', 'User', 'Admin'])->default('User');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
